@@ -1,3 +1,4 @@
+using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Application.Services;
 using CleanArchitecture.Infraestructure.Persistence.Data;
 using CleanArchitecture.Infraestructure.Persistence.Repositories;

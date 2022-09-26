@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infraestructure.Persistence.Repositories;
+﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Domain.Entities;
 
 namespace CleanArchitecture.Application.Services
 {
@@ -7,7 +7,7 @@ namespace CleanArchitecture.Application.Services
     {
         private readonly IRepository<Estudiante> _repository;
 
-        public EstudiantesService(Infraestructure.Persistence.Repositories.IRepository<Estudiante> repository)
+        public EstudiantesService(IRepository<Estudiante> repository)
         {
             _repository = repository;
         }

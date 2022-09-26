@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Infraestructure.Persistence.Data;
+﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Infraestructure.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

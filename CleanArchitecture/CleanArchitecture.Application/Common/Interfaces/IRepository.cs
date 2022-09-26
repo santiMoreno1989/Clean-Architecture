@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 
-namespace CleanArchitecture.Infraestructure.Persistence.Repositories
+namespace CleanArchitecture.Application.Common.Interfaces
 {
-    public interface IRepository<T> where T : class,new()
+    public interface IRepository<T> where T : class, new()
     {
         Task<T> GetById(int id);
         Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
