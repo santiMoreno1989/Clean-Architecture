@@ -1,4 +1,6 @@
+using CleanArchitecture.Application.Services;
 using CleanArchitecture.Infraestructure.Persistence.Data;
+using CleanArchitecture.Infraestructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<EstudiantesService>();
 
 var app = builder.Build();
 

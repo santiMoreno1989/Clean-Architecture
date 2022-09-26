@@ -13,6 +13,7 @@ namespace CleanArchitecture.Infraestructure.Persistence.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.HasDefaultSchema("CleanArch");
         }
     }
 }

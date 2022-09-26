@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Profiles\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchitecture.Core\CleanArchitecture.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Infraestructure\CleanArchitecture.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
