@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CleanArchitecture.Infraestructure.Persistence.Data
 {
@@ -8,6 +9,10 @@ namespace CleanArchitecture.Infraestructure.Persistence.Data
             : base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
