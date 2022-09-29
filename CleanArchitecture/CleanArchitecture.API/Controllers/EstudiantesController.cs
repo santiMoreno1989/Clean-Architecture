@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Services;
+﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Application.Services;
 using CleanArchitecture.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,9 @@ namespace CleanArchitecture.API.Controllers
     [ApiController]
     public class EstudiantesController : ControllerBase
     {
-        private readonly EstudiantesService _estudiantesService;
+        private readonly IEstudiantesService _estudiantesService;
 
-        public EstudiantesController(EstudiantesService estudiantesService)
+        public EstudiantesController(IEstudiantesService estudiantesService)
         {
             _estudiantesService = estudiantesService;
         }
