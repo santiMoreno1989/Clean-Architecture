@@ -12,7 +12,7 @@ namespace CleanArchitecture.Infraestructure
         {
             services.AddDbContext<ApplicationDbContext>(options=>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), optionsBuilder=>
-                    optionsBuilder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                    optionsBuilder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)), ServiceLifetime.Transient);
             
             services.Scan(selector=>
                 selector.FromAssemblies(Assembly.GetExecutingAssembly())
