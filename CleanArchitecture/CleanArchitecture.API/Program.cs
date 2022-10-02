@@ -1,3 +1,5 @@
+using CleanArchitecture.API;
+using CleanArchitecture.API.Middlewares;
 using CleanArchitecture.Application;
 using CleanArchitecture.Infraestructure;
 
@@ -13,12 +15,16 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.MapEndpoints();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureMiddleware();
 
 app.UseHttpsRedirection();
 
