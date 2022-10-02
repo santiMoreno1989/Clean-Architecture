@@ -8,7 +8,7 @@ namespace CleanArchitecture.Application.Common.Interfaces
         Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
         Task<IEnumerable<T>> GetAll();
         Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
-        void Add(T entity);
+        Task Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Update(T entity);
         void UdateRange(IEnumerable<T> entities);

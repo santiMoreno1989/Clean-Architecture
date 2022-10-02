@@ -14,10 +14,10 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             _context = context;
         }
 
-        public void Add(T entity)
+        public async Task Add(T entity)
         {
-            _context.Set<T>().Add(entity);
-            _context.SaveChanges();
+           await  _context.Set<T>().AddAsync(entity);
+           await _context.SaveChangesAsync();  
         }
 
         public void AddRange(IEnumerable<T> entities)

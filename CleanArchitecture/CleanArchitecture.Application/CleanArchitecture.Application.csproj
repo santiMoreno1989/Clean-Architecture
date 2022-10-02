@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Dtos\" />
     <Folder Include="Common\Profiles\" />
   </ItemGroup>
 
