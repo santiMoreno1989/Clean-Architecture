@@ -2,16 +2,21 @@
 using CleanArchitecture.Application.Common.Exceptions;
 using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Domain.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace CleanArchitecture.Application.Services
 {
     public class EstudiantesService : IEstudiantesService
     {
         private readonly IEstudiantesRepository _repository;
+        private readonly HttpClientService _httpClientService;
+        private readonly IConfiguration _configuration;
 
-        public EstudiantesService(IEstudiantesRepository repository)
+        public EstudiantesService(IEstudiantesRepository repository,IConfiguration configuration, HttpClientService httpClientService)
         {
             _repository = repository;
+            _configuration = configuration;
+            _httpClientService = httpClientService;
         }
 
         public async Task<IEnumerable<Estudiante>> GetAllStudents()
@@ -41,7 +46,7 @@ namespace CleanArchitecture.Application.Services
             if (nombre.Contains(student.Nombre.ToLower()) && apellido.Contains(student.Apellido.ToLower()))
                 throw new BadRequestException($"El estudiante {student.Nombre} {student.Apellido} ya existe en la base de datos.");
 
-           await  _repository.Add(student);
+            await _repository.Add(student);
             return student;
         }
 
