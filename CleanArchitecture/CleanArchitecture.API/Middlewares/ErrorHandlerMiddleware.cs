@@ -1,46 +1,58 @@
 ﻿using CleanArchitecture.Application.Common.Exceptions;
+using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Text.Json;
 
 namespace CleanArchitecture.API.Middlewares
 {
-    public class ErrorHandlerMiddleware
+    public class ErrorHandlerMiddleware : IMiddleware
     {
-        private readonly RequestDelegate _next;
+        private readonly ILogger<ErrorHandlerMiddleware> _logger;
 
-        public ErrorHandlerMiddleware(RequestDelegate next)
+        public ErrorHandlerMiddleware(ILogger<ErrorHandlerMiddleware> logger) 
         {
-            _next = next;
+            _logger = logger;
         }
 
-        public async Task Invoke(HttpContext context) 
+        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
             {
-                await _next(context);
+                await next(context);
             }
             catch (Exception error)
             {
 
                 var response = context.Response;
-                response.ContentType = "application/json";
+                context.Response.ContentType = "application/json";
+
+
                 switch (error)
                 {
-                    case BadRequestException e: 
-                        response.StatusCode=(int)HttpStatusCode.BadRequest;
+                    case BadRequestException e:
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;
 
                     case KeyNotFoundException e:
-                        response.StatusCode=(int)HttpStatusCode.NotFound;
+                        response.StatusCode = (int)HttpStatusCode.NotFound;
                         break;
-                    
+
                     default:
-                        response.StatusCode=(int)HttpStatusCode.InternalServerError;
+                        response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         break;
                 }
 
-                var result = JsonSerializer.Serialize(new { message = error?.Message });
-                await response.WriteAsync(result);
+                ProblemDetails problemDetails = new()
+                {
+                    Title = "Se produjo un error al procesar su consulta.",
+                    Status = response.StatusCode,
+                    Detail = error?.Message,
+                    Instance = error?.StackTrace
+                };
+
+                var jsonResult = JsonSerializer.Serialize(problemDetails);
+                await context.Response.WriteAsync(jsonResult);
+                _logger.LogError(jsonResult);
             }
         }
     }
