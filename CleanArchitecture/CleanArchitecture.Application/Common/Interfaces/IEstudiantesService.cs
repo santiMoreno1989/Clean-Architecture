@@ -6,7 +6,7 @@ namespace CleanArchitecture.Application.Common.Interfaces
     public interface IEstudiantesService
     {
         Task<Estudiante> CreateStudent(EstudianteRequest estudiante);
-        Task<IEnumerable<Estudiante>> GetAllStudents();
+        Task<IEnumerable<EstudianteResponse>> GetAllStudents();
         Task<Estudiante> GetStudent(int id);
     }
 }

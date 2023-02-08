@@ -11,17 +11,16 @@ namespace CleanArchitecture.Application.Services
         private readonly IEstudiantesRepository _repository;
         private readonly HttpClientService _httpClientService;
         private readonly IConfiguration _configuration;
-
-        public EstudiantesService(IEstudiantesRepository repository,IConfiguration configuration, HttpClientService httpClientService)
+        public EstudiantesService(IEstudiantesRepository repository, IConfiguration configuration, HttpClientService httpClientService)
         {
             _repository = repository;
             _configuration = configuration;
             _httpClientService = httpClientService;
         }
 
-        public async Task<IEnumerable<Estudiante>> GetAllStudents()
+        public async Task<IEnumerable<EstudianteResponse>> GetAllStudents()
         {
-            var estudiantes = await _repository.GetAll();
+            var estudiantes = (await _repository.GetAll()).Select(e=>(EstudianteResponse) e);
 
             if (!estudiantes.Any())
                 throw new KeyNotFoundException("No existen estudiantes en la base de datos.");
