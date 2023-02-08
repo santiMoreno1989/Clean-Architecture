@@ -1,44 +1,47 @@
 ﻿using CleanArchitecture.Application.Common.Exceptions;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using System.Net.Http.Headers;
+using CleanArchitecture.Application.Common.Interfaces;
+using System.Net;
 using System.Text;
 using System.Text.Json;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace CleanArchitecture.Application.Services
 {
     public class HttpClientService
     {
-        private readonly HttpClient _httpClient = new();
-        private readonly IConfiguration _configuration;
-
-        public HttpClientService(IConfiguration configuration)
+        private readonly HttpClient _httpClient;
+        public HttpClientService(HttpClient httpClient)
         {
-            _configuration = configuration;
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            _httpClient.BaseAddress = new Uri(_configuration.GetSection("ApiAlkemy").Value);
+            _httpClient = httpClient;
         }
 
-        public async Task<T> GetResource<T>(string url, object values = null)
+        public async Task<T> GetResource<T>(string uri, object values = null)
         {
+            HttpResponseMessage responseMessage = new();
             try
             {
-                HttpResponseMessage response = await _httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-                var resultadoStr = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<T>(resultadoStr, new JsonSerializerOptions {PropertyNameCaseInsensitive=true });
+                responseMessage = await _httpClient.GetAsync(uri);
+                responseMessage.EnsureSuccessStatusCode();
+                var resultadoStr = await responseMessage.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<T>(resultadoStr, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
             }
             catch (Exception ex)
             {
 
-                throw new BadRequestException(ex.Message);
+
+                if (responseMessage.StatusCode == HttpStatusCode.BadRequest)
+                    throw new BadRequestException(ex.Message);
+
+                if (responseMessage.StatusCode == HttpStatusCode.NotFound)
+                    throw new KeyNotFoundException();
+
+                throw;
             }
         }
 
         public async Task<T> PostResource<T>(string url, T content)
         {
-            var serialized = new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
+            var serialized = new StringContent(JsonSerializer.Serialize(content), Encoding.UTF8, "application/json");
             HttpResponseMessage response = await _httpClient.PostAsync(url, serialized);
             var errorMessage = $"Request Error  - StatusCode {response.StatusCode.GetHashCode()} {response.ReasonPhrase} {response.RequestMessage.RequestUri}";
 
@@ -48,11 +51,11 @@ namespace CleanArchitecture.Application.Services
             try
             {
                 string responseBody = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(responseBody);
+                return JsonSerializer.Deserialize<T>(responseBody);
             }
             catch (Exception ex)
             {
-                throw new BadRequestException(errorMessage + " - Error al leer la respuesta - " + ex.Message);  
+                throw new BadRequestException(errorMessage + " - Error al leer la respuesta - " + ex.Message);
             }
         }
     }
