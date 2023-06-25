@@ -8,11 +8,11 @@ namespace CleanArchitecture.Application.Common.Interfaces
         Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
         Task<IEnumerable<T>> GetAll();
         Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
-        Task Add(T entity);
+        Task<T> Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Update(T entity);
         void UdateRange(IEnumerable<T> entities);
-        void Delete(T entity);
+        Task Delete(int id);
         void DeleteRange(IEnumerable<T> entities);
     }
 }

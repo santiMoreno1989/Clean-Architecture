@@ -14,10 +14,11 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             _context = context;
         }
 
-        public async Task Add(T entity)
+        public async Task<T> Add(T entity)
         {
            await  _context.Set<T>().AddAsync(entity);
-           await _context.SaveChangesAsync();  
+           await _context.SaveChangesAsync();
+            return entity;
         }
 
         public void AddRange(IEnumerable<T> entities)
@@ -25,9 +26,11 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             _context.Set<T>().AddRange(entities);
         }
 
-        public void Delete(T entity)
+        public async Task Delete(int id)
         {
+            T entity = await GetById(id);
             _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public void DeleteRange(IEnumerable<T> entities)

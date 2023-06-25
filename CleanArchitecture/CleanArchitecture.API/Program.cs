@@ -1,7 +1,6 @@
 using CleanArchitecture.API;
 using CleanArchitecture.API.Middlewares;
 using CleanArchitecture.Application;
-using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Application.Services;
 using CleanArchitecture.Infraestructure;
 using Microsoft.AspNetCore.Http.Json;
@@ -21,11 +20,17 @@ var logger = new LoggerConfiguration()
 .Enrich.FromLogContext()
 .CreateLogger();
 
-builder.Services.AddHttpClient<HttpClientService>(client => 
+builder.Services.AddHttpClient<IHttpAlkemyService, HttpAlkemyService>(client => 
 {
     client.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAlkemy").Value);
     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 });
+
+builder.Services.AddHttpClient<HttpSolutionService>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration.GetSection("SolutionApiUrl").Value);
+});
+
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
 builder.Services.AddTransient<ErrorHandlerMiddleware>();
@@ -39,8 +44,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-app.MapEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
