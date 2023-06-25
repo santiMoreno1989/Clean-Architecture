@@ -1,0 +1,777 @@
+{
+  "CleanArchitecture.API.dll": {
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.API\\Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "55": 0,
+            "57": 0,
+            "59": 0,
+            "61": 0,
+            "63": 0
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 342,
+              "EndOffset": 344,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 342,
+              "EndOffset": 362,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.API\\Middlewares\\ErrorHandlerMiddleware.cs": {
+      "CleanArchitecture.API.Middlewares.ErrorHandlerMiddleware": {
+        "System.Void CleanArchitecture.API.Middlewares.ErrorHandlerMiddleware::.ctor(Microsoft.Extensions.Logging.ILogger`1<CleanArchitecture.API.Middlewares.ErrorHandlerMiddleware>)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.API.Middlewares.ErrorHandlerMiddleware/<InvokeAsync>d__2": {
+        "System.Void CleanArchitecture.API.Middlewares.ErrorHandlerMiddleware/<InvokeAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "33": 0,
+            "34": 0,
+            "37": 0,
+            "38": 0,
+            "41": 0,
+            "42": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 283,
+              "EndOffset": 285,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 283,
+              "EndOffset": 314,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 308,
+              "EndOffset": 335,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 308,
+              "EndOffset": 354,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 443,
+              "EndOffset": 445,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 443,
+              "EndOffset": 449,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 468,
+              "EndOffset": 470,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 468,
+              "EndOffset": 474,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.API\\Middlewares\\MiddlewareExtensions.cs": {
+      "CleanArchitecture.API.Middlewares.MiddlewareExtensions": {
+        "System.Void CleanArchitecture.API.Middlewares.MiddlewareExtensions::ConfigureMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "8": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.API\\Controllers\\EstudiantesController.cs": {
+      "CleanArchitecture.API.Controllers.EstudiantesController": {
+        "System.Void CleanArchitecture.API.Controllers.EstudiantesController::.ctor(CleanArchitecture.Application.Common.Interfaces.IEstudiantesService)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.API.Controllers.EstudiantesController/<CreateStudent>d__3": {
+        "System.Void CleanArchitecture.API.Controllers.EstudiantesController/<CreateStudent>d__3::MoveNext()": {
+          "Lines": {
+            "26": 0
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.API.Controllers.EstudiantesController/<DeleteStudent>d__5": {
+        "System.Void CleanArchitecture.API.Controllers.EstudiantesController/<DeleteStudent>d__5::MoveNext()": {
+          "Lines": {
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.API.Controllers.EstudiantesController/<GetAllStudents>d__2": {
+        "System.Void CleanArchitecture.API.Controllers.EstudiantesController/<GetAllStudents>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.API.Controllers.EstudiantesController/<GetStudent>d__4": {
+        "System.Void CleanArchitecture.API.Controllers.EstudiantesController/<GetStudent>d__4::MoveNext()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "CleanArchitecture.Application.dll": {
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\DependencyInjection.cs": {
+      "CleanArchitecture.Application.DependencyInjection": {
+        "Microsoft.Extensions.DependencyInjection.IServiceCollection CleanArchitecture.Application.DependencyInjection::AddApplicationLayer(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Services\\EstudiantesService.cs": {
+      "CleanArchitecture.Application.Services.EstudiantesService": {
+        "System.Void CleanArchitecture.Application.Services.EstudiantesService::.ctor(CleanArchitecture.Application.Common.Interfaces.IEstudiantesRepository)": {
+          "Lines": {
+            "13": 4,
+            "14": 4,
+            "15": 4,
+            "16": 4
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.Application.Services.EstudiantesService/<>c": {
+        "System.String CleanArchitecture.Application.Services.EstudiantesService/<>c::<CreateStudent>b__3_0(CleanArchitecture.Domain.Entities.Estudiante)": {
+          "Lines": {
+            "33": 1
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Services.EstudiantesService/<>c::<CreateStudent>b__3_1(CleanArchitecture.Domain.Entities.Estudiante)": {
+          "Lines": {
+            "34": 1
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.Application.Services.EstudiantesService/<CreateStudent>d__3": {
+        "System.Void CleanArchitecture.Application.Services.EstudiantesService/<CreateStudent>d__3::MoveNext()": {
+          "Lines": {
+            "31": 1,
+            "32": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 0,
+            "46": 1,
+            "47": 1,
+            "48": 1
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 338,
+              "EndOffset": 340,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 338,
+              "EndOffset": 369,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 374,
+              "EndOffset": 376,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 374,
+              "EndOffset": 476,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "CleanArchitecture.Application.Services.EstudiantesService/<DeleteStudent>d__5": {
+        "System.Void CleanArchitecture.Application.Services.EstudiantesService/<DeleteStudent>d__5::MoveNext()": {
+          "Lines": {
+            "64": 1,
+            "65": 1,
+            "66": 1
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.Application.Services.EstudiantesService/<GetAllStudents>d__2": {
+        "System.Void CleanArchitecture.Application.Services.EstudiantesService/<GetAllStudents>d__2::MoveNext()": {
+          "Lines": {
+            "19": 1,
+            "21": 1,
+            "23": 1,
+            "24": 0,
+            "26": 1,
+            "28": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 163,
+              "EndOffset": 165,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 163,
+              "EndOffset": 176,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "CleanArchitecture.Application.Services.EstudiantesService/<GetStudent>d__4": {
+        "System.Void CleanArchitecture.Application.Services.EstudiantesService/<GetStudent>d__4::MoveNext()": {
+          "Lines": {
+            "51": 1,
+            "52": 1,
+            "53": 0,
+            "55": 1,
+            "57": 1,
+            "58": 0,
+            "60": 1,
+            "61": 1
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 26,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 184,
+              "EndOffset": 186,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 184,
+              "EndOffset": 249,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Services\\HttpAlkemyService.cs": {
+      "CleanArchitecture.Application.Services.HttpAlkemyService": {
+        "T CleanArchitecture.Application.Services.HttpAlkemyService::DeserializeResponse(System.String)": {
+          "Lines": {
+            "82": 0
+          },
+          "Branches": []
+        },
+        "System.Void CleanArchitecture.Application.Services.HttpAlkemyService::.ctor(System.Net.Http.HttpClient)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.Application.Services.HttpAlkemyService/<GetAlkemyResource>d__2`1": {
+        "System.Void CleanArchitecture.Application.Services.HttpAlkemyService/<GetAlkemyResource>d__2`1::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "28": 0,
+            "29": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "47": 0
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 423,
+              "EndOffset": 428,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 32,
+              "Offset": 423,
+              "EndOffset": 618,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 640,
+              "EndOffset": 642,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 640,
+              "EndOffset": 648,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "CleanArchitecture.Application.Services.HttpAlkemyService/<PostResource>d__3`1": {
+        "System.Void CleanArchitecture.Application.Services.HttpAlkemyService/<PostResource>d__3`1::MoveNext()": {
+          "Lines": {
+            "50": 0,
+            "51": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "74": 0,
+            "75": 0,
+            "77": 0,
+            "79": 0
+          },
+          "Branches": [
+            {
+              "Line": 63,
+              "Offset": 450,
+              "EndOffset": 455,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 450,
+              "EndOffset": 717,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 739,
+              "EndOffset": 741,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 739,
+              "EndOffset": 747,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Services\\HttpSolutionService.cs": {
+      "CleanArchitecture.Application.Services.HttpSolutionService": {
+        "System.Void CleanArchitecture.Application.Services.HttpSolutionService::.ctor(System.Net.Http.HttpClient)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      },
+      "CleanArchitecture.Application.Services.HttpSolutionService/<GetSolutionResource>d__2`1": {
+        "System.Void CleanArchitecture.Application.Services.HttpSolutionService/<GetSolutionResource>d__2`1::MoveNext()": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "27": 0,
+            "28": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "39": 0
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 388,
+              "EndOffset": 390,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 388,
+              "EndOffset": 407,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 429,
+              "EndOffset": 431,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 429,
+              "EndOffset": 437,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Exceptions\\BadRequestException.cs": {
+      "CleanArchitecture.Application.Common.Exceptions.BadRequestException": {
+        "System.Void CleanArchitecture.Application.Common.Exceptions.BadRequestException::.ctor()": {
+          "Lines": {
+            "5": 0,
+            "6": 0,
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void CleanArchitecture.Application.Common.Exceptions.BadRequestException::.ctor(System.String)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Dtos\\CreateObjectResponse.cs": {
+      "CleanArchitecture.Application.Common.Dtos.CreateObjectResponse": {
+        "System.Int32 CleanArchitecture.Application.Common.Dtos.CreateObjectResponse::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Common.Dtos.CreateObjectResponse::get_Message()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Dtos\\EstudianteRequest.cs": {
+      "CleanArchitecture.Application.Common.Dtos.EstudianteRequest": {
+        "System.String CleanArchitecture.Application.Common.Dtos.EstudianteRequest::get_Nombre()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Common.Dtos.EstudianteRequest::get_Apellido()": {
+          "Lines": {
+            "13": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Dtos\\EstudianteResponse.cs": {
+      "CleanArchitecture.Application.Common.Dtos.EstudianteResponse": {
+        "System.String CleanArchitecture.Application.Common.Dtos.EstudianteResponse::get_Nombre()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Common.Dtos.EstudianteResponse::get_Apellido()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime CleanArchitecture.Application.Common.Dtos.EstudianteResponse::get_FechaInscripcion()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "CleanArchitecture.Application.Common.Dtos.EstudianteResponse CleanArchitecture.Application.Common.Dtos.EstudianteResponse::op_Explicit(CleanArchitecture.Domain.Entities.Estudiante)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Dtos\\GeneroResponse.cs": {
+      "CleanArchitecture.Application.Common.Dtos.GeneroResponse": {
+        "System.String CleanArchitecture.Application.Common.Dtos.GeneroResponse::get_Nombre()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Common.Dtos.GeneroResponse::get_Imagen()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> CleanArchitecture.Application.Common.Dtos.GeneroResponse::get_SoftDelete()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime CleanArchitecture.Application.Common.Dtos.GeneroResponse::get_FechaCreacion()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> CleanArchitecture.Application.Common.Dtos.GeneroResponse::get_FechaModificacion()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\churi\\Desktop\\Arquitectura Limpia\\CleanArchitecture\\CleanArchitecture.Application\\Common\\Dtos\\ProductsResponse.cs": {
+      "CleanArchitecture.Application.Common.Dtos.ProductsResponse": {
+        "System.Int32 CleanArchitecture.Application.Common.Dtos.ProductsResponse::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String CleanArchitecture.Application.Common.Dtos.ProductsResponse::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal CleanArchitecture.Application.Common.Dtos.ProductsResponse::get_Price()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
