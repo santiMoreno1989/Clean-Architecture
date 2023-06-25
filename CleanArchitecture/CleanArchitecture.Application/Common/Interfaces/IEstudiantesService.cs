@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Application.Common.Dtos;
-using CleanArchitecture.Domain.Dtos;
 using CleanArchitecture.Domain.Entities;
 
 namespace CleanArchitecture.Application.Common.Interfaces

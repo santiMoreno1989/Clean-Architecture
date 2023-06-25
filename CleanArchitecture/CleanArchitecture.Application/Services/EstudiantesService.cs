@@ -1,9 +1,7 @@
 ﻿using CleanArchitecture.Application.Common.Dtos;
 using CleanArchitecture.Application.Common.Exceptions;
 using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Dtos;
 using CleanArchitecture.Domain.Entities;
-using Microsoft.Extensions.Configuration;
 
 namespace CleanArchitecture.Application.Services
 {
