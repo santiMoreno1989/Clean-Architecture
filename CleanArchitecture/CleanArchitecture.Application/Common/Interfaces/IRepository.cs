@@ -13,6 +13,6 @@ namespace CleanArchitecture.Application.Common.Interfaces
         void Update(T entity);
         void UdateRange(IEnumerable<T> entities);
         Task Delete(int id);
-        void DeleteRange(IEnumerable<T> entities);
+        Task DeleteRange(IEnumerable<T> entities);
     }
 }

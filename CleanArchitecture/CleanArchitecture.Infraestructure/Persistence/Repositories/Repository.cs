@@ -33,9 +33,10 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public void DeleteRange(IEnumerable<T> entities)
+        public async Task DeleteRange(IEnumerable<T> entities)
         {
             _context.Set<T>().RemoveRange(entities);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<T> FirstAsync(Expression<Func<T, bool>> predicate)
