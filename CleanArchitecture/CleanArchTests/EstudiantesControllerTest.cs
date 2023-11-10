@@ -1,6 +1,7 @@
 ﻿using CleanArchitecture.API.Controllers;
 using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Domain.Entities;
+using Hangfire;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
@@ -11,10 +12,12 @@ namespace CleanArchTests
     {
         private readonly EstudiantesController _estudiantesController;
         private readonly Mock<IEstudiantesService> _estudiantesService = new Mock<IEstudiantesService>();
+		private readonly Mock<IBackgroundJobClient> _backgroundJobClient = new();
+		private readonly Mock<IRecurringJobManager> _recurringJobManager = new();
 
-        public EstudiantesControllerTest()
+		public EstudiantesControllerTest()
         {
-            _estudiantesController = new EstudiantesController(_estudiantesService.Object);
+            _estudiantesController = new EstudiantesController(_estudiantesService.Object,_backgroundJobClient.Object,_recurringJobManager.Object);
         }
 
         [Fact]
