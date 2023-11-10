@@ -3,8 +3,11 @@ using CleanArchitecture.API.Middlewares;
 using CleanArchitecture.Application;
 using CleanArchitecture.Application.Services;
 using CleanArchitecture.Infraestructure;
+using Hangfire;
+using Hangfire.SqlServer;
 using Microsoft.AspNetCore.Http.Json;
 using Serilog;
+using System.Configuration;
 using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
 
@@ -35,6 +38,21 @@ builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
 builder.Services.AddTransient<ErrorHandlerMiddleware>();
 
+builder.Services.AddHangfire(configuration => configuration
+.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+.UseSimpleAssemblyNameTypeSerializer()
+.UseRecommendedSerializerSettings()
+.UseSqlServerStorage(builder.Configuration.GetConnectionString("HangfireConnection"), new SqlServerStorageOptions
+{
+	CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+	SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+	QueuePollInterval = TimeSpan.Zero,
+	UseRecommendedIsolationLevel = true,
+	DisableGlobalLocks = true
+}));
+
+builder.Services.AddHangfireServer();
+
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer(builder.Configuration);
 
@@ -56,7 +74,7 @@ app.ConfigureMiddleware();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseHangfireDashboard("/Dashboard");
 
 app.MapControllers();
 

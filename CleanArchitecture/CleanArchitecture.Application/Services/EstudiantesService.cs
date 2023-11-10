@@ -6,7 +6,7 @@ using CleanArchitecture.Domain.Entities;
 namespace CleanArchitecture.Application.Services
 {
     public class EstudiantesService : IEstudiantesService
-    {
+	{
         private readonly IEstudiantesRepository _repository;
         public EstudiantesService(IEstudiantesRepository repository)
         {
@@ -36,6 +36,7 @@ namespace CleanArchitecture.Application.Services
                 Apellido = estudiante.Apellido,
                 FechaInscripcion = DateTime.Now,
                 Nombre = estudiante.Nombre,
+                Activo = estudiante.Activo
             };
 
             if (nombre.Contains(student.Nombre.ToLower()) && apellido.Contains(student.Apellido.ToLower()))
@@ -63,5 +64,27 @@ namespace CleanArchitecture.Application.Services
              await _repository.Delete(id);
         }
 
-    }
+		public async Task CreateStudentJob()
+		{
+			var student = new Estudiante()
+			{
+				Apellido = "Borrar",
+				FechaInscripcion = DateTime.Now,
+				Nombre = "Para",
+                Activo = true
+			};
+
+			await _repository.Add(student);
+		}
+
+		public async Task DeleteStudentJob()
+		{
+            var estudianteRepetido = (await _repository.GetWhere(e => !e.Activo));
+
+            if (estudianteRepetido.Any())
+               await _repository.DeleteRange(estudianteRepetido);
+
+
+		}
+	}
 }

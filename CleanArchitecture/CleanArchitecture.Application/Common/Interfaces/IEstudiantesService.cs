@@ -9,5 +9,7 @@ namespace CleanArchitecture.Application.Common.Interfaces
         Task<IEnumerable<Estudiante>> GetAllStudents();
         Task<Estudiante> GetStudent(int id);
         Task DeleteStudent(int id);
-    }
+		Task CreateStudentJob();
+		Task DeleteStudentJob();
+	}
 }
