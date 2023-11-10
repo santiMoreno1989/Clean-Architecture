@@ -6,6 +6,7 @@
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public DateTime FechaInscripcion { get; set; }
+        public bool Activo { get; set; }
         public ICollection<Inscripcion> Inscripciones { get; set; }
     }
 }

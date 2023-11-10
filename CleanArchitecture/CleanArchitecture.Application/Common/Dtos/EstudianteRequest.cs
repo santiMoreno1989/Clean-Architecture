@@ -11,6 +11,7 @@ namespace CleanArchitecture.Application.Common.Dtos
         [Required]
         [MaxLength(250, ErrorMessage = "Ha excedido el maximo de 250 caracteres.")]
         public string Apellido { get; set; } = string.Empty;
+        public bool Activo { get; set; }
 
     }
 }
