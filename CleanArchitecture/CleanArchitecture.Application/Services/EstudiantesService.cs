@@ -13,6 +13,11 @@ namespace CleanArchitecture.Application.Services
             _repository = repository;
         }
 
+        /// <summary>
+        /// Metodo para obtener todos los estudiantes
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException"></exception>
         public async Task<IEnumerable<Estudiante>> GetAllStudents()
         {
 
