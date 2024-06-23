@@ -64,6 +64,11 @@ namespace CleanArchitecture.Application.Services
             return estudiante;
         }
 
+        /// <summary>
+        /// Metodo para eliminar un estudiante
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task DeleteStudent(int id) 
         {
              await _repository.Delete(id);
