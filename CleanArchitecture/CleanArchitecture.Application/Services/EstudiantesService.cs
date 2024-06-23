@@ -30,6 +30,12 @@ namespace CleanArchitecture.Application.Services
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="estudiante"></param>
+        /// <returns></returns>
+        /// <exception cref="BadRequestException"></exception>
         public async Task<Estudiante> CreateStudent(EstudianteRequest estudiante)
         {
             var estudianteExiste = await _repository.GetAll();
@@ -51,6 +57,13 @@ namespace CleanArchitecture.Application.Services
             return student;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="BadRequestException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
         public async Task<Estudiante> GetStudent(int id)
         {
             if (id == 0)

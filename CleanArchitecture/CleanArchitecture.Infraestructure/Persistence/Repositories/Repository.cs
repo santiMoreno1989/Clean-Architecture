@@ -21,6 +21,10 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             return entity;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
         public void AddRange(IEnumerable<T> entities)
         {
             _context.Set<T>().AddRange(entities);
