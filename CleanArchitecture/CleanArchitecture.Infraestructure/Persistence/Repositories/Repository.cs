@@ -30,6 +30,11 @@ namespace CleanArchitecture.Infraestructure.Persistence.Repositories
             _context.Set<T>().AddRange(entities);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task Delete(int id)
         {
             T entity = await GetById(id);
