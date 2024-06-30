@@ -69,12 +69,12 @@ namespace CleanArchitecture.Application.Services
             if (id == 0)
                 throw new BadRequestException();
 
-            var estudiante = await _repository.GetById(id);
+            var student = await _repository.GetById(id);
 
-            if (estudiante == null)
+            if (student == null)
                 throw new KeyNotFoundException($"El estudiante con ID : {id} no existe.");
 
-            return estudiante;
+            return student;
         }
 
         /// <summary>
