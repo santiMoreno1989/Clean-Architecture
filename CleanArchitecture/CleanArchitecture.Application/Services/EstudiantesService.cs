@@ -13,6 +13,11 @@ namespace CleanArchitecture.Application.Services
             _repository = repository;
         }
 
+        /// <summary>
+        /// Obtiene todos los estudiantes registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException"></exception>
         public async Task<IEnumerable<Estudiante>> GetAllStudents()
         {
 
@@ -25,6 +30,12 @@ namespace CleanArchitecture.Application.Services
 
         }
 
+        /// <summary>
+        /// Registra un nuevo estudiante
+        /// </summary>
+        /// <param name="estudiante"></param>
+        /// <returns></returns>
+        /// <exception cref="BadRequestException"></exception>
         public async Task<Estudiante> CreateStudent(EstudianteRequest estudiante)
         {
             var estudianteExiste = await _repository.GetAll();
@@ -46,6 +57,13 @@ namespace CleanArchitecture.Application.Services
             return student;
         }
 
+        /// <summary>
+        /// Obtiene un estudiante en base a su ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="BadRequestException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
         public async Task<Estudiante> GetStudent(int id)
         {
             if (id == 0)
@@ -59,6 +77,11 @@ namespace CleanArchitecture.Application.Services
             return estudiante;
         }
 
+        /// <summary>
+        /// Borra un estudiante de la base de datos a traves de su ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task DeleteStudent(int id) 
         {
              await _repository.Delete(id);
