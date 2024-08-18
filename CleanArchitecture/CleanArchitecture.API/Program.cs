@@ -6,6 +6,7 @@ using CleanArchitecture.Infraestructure;
 using Hangfire;
 using Hangfire.SqlServer;
 using Microsoft.AspNetCore.Http.Json;
+using Microsoft.FeatureManagement;
 using Serilog;
 using System.Configuration;
 using System.Net.Http.Headers;
@@ -52,6 +53,7 @@ builder.Services.AddHangfire(configuration => configuration
 }));
 
 builder.Services.AddHangfireServer();
+builder.Services.AddFeatureManagement(builder.Configuration.GetSection("FeatureManagement"));
 
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer(builder.Configuration);
