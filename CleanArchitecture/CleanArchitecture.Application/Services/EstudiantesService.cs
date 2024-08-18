@@ -1,32 +1,42 @@
 ﻿using CleanArchitecture.Application.Common.Dtos;
 using CleanArchitecture.Application.Common.Exceptions;
 using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Domain.Constants;
 using CleanArchitecture.Domain.Entities;
+using Microsoft.FeatureManagement;
 
 namespace CleanArchitecture.Application.Services
 {
     public class EstudiantesService : IEstudiantesService
 	{
         private readonly IEstudiantesRepository _repository;
-        public EstudiantesService(IEstudiantesRepository repository)
+        private readonly IFeatureManager _featureManager;
+		public EstudiantesService(IEstudiantesRepository repository, IFeatureManager featureManager)
+		{
+			_repository = repository;
+			_featureManager = featureManager;
+		}
+
+		/// <summary>
+		/// Obtiene todos los estudiantes registrados en la base de datos
+		/// </summary>
+		/// <returns></returns>
+		/// <exception cref="KeyNotFoundException"></exception>
+		public async Task<IEnumerable<Estudiante>> GetAllStudents()
         {
-            _repository = repository;
-        }
+            if (await _featureManager.IsEnabledAsync(FeatureFlag.StudentFeature))
+            {
+                var estudiantes = await _repository.GetAll();
 
-        /// <summary>
-        /// Obtiene todos los estudiantes registrados en la base de datos
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="KeyNotFoundException"></exception>
-        public async Task<IEnumerable<Estudiante>> GetAllStudents()
-        {
+                if (!estudiantes.Any())
+                    throw new KeyNotFoundException("No existen estudiantes en la base de datos.");
 
-            var estudiantes = await _repository.GetAll();
-
-            if (!estudiantes.Any())
-                throw new KeyNotFoundException("No existen estudiantes en la base de datos.");
-
-            return estudiantes;
+                return estudiantes;
+            }
+            else 
+            {
+                throw new BadRequestException("Característica no habilitada");
+            }
 
         }
 
